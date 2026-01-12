@@ -1,0 +1,97 @@
+* {margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif;}
+
+body {background:#0b0b0b; color:#e6e6e6;}
+
+/* NAVBAR */
+.navbar {
+  padding: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  position: relative;
+  display: block;
+  padding: 12px 18px;
+  background-color: #111;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.nav-links li a:hover {
+  background-color: #1db954;
+  color: black;
+  transform: translateY(-3px);
+}
+
+/* TOOLTIP */
+.nav-links li a::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: rgba(0, 0, 0, 0.9);
+  color: #1db954;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a::before {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0,0,0,0.9) transparent;
+  opacity: 0;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a:hover::before {
+  opacity: 1;
+}
+
+/* INTRO */
+.intro {text-align:center; padding:40px 20px;}
+.intro h1 {color:#1db954; margin-bottom:15px;}
+.intro p {color:#ccc; font-size:16px; line-height:1.6;}
+
+/* SOLUTIONS GRID */
+.solutions-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; padding:30px;}
+
+/* SOLUTION CARD */
+.solution-card {
+  background:#111; padding:20px; border-radius:15px;
+  border-left:4px solid #1db954;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.solution-card:hover {transform:translateY(-6px); box-shadow:0 12px 30px rgba(29,185,84,0.35);}
+.solution-card h2 {color:#1db954; margin-bottom:10px;}
+.solution-card p {margin-bottom:10px; color:#ddd;}
+.impact {color:#9af0b7; font-size:0.95rem;}
+
+/* FOOTER */
+.footer {background:#111; padding:20px; text-align:center; border-top:1px solid #222;}
+.footer p {color:#888; font-size:14px;}
+.creator {margin-top:8px; font-size:13px; color:#666;}
+
+/* RESPONSIVE */
+@media (max-width:600px){.intro h1{font-size:1.6rem;}}
